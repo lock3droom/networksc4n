@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <fstream>
 #include <string>
+#include <iostream>
+#include <unistd.h>
+#include <limits.h>
 
 const std::string GREEN = "\033[32m";
 const std::string RESET = "\033[0m";
