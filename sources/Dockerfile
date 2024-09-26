@@ -1,11 +1,19 @@
-FROM gcc:latest
+FROM debian:latest
+
+RUN apt-get update && apt-get install -y \
+    g++ \
+    iputils-ping \
+    iproute2 \
+    make \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
-COPY ip_scanner.cpp .
+COPY ./main.cpp .
 
-RUN apt-get update && apt-get install -y iproute2
+RUN g++ -o sniff main.cpp
 
-RUN g++ -o ip_scanner ip_scanner.cpp -pthread
+# Exposer un port si nécessaire (ex: 8080)
+# EXPOSE 8080
 
-CMD ["./ip_scanner"]
+CMD ["./sniff"]
