@@ -1,5 +1,5 @@
-docker build -t ip-scanner .
-docker run --rm --network host --privileged ip-scanner
+BUILD ```docker build -t sniff-scanner .```
+RUN ```docker run --rm -it --network=host sniff-scanner ```
 
 
 
