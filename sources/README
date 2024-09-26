@@ -1,0 +1,10 @@
+docker build -t ip-scanner .
+docker run --rm --network host --privileged ip-scanner
+
+
+
+reseau en anneau
+reseau en arbre
+reseau en bus
+reseau en étoile
+reseau maillé
